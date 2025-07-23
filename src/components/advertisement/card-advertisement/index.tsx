@@ -27,7 +27,7 @@ const CardAdvertisement: React.FC<CardAdvertisementProps> = ({
       >
         <div className="relative w-full aspect-[6/5] sm:aspect-[8/5s] md:aspect-[10/5]">
           <Image
-            src={imageUrl}
+            src={imageUrl || '/fallback-image.png'}
             alt={altText}
             fill
             priority

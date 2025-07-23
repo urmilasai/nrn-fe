@@ -36,10 +36,7 @@ const { advertisement, advertisementLoading, advertisementError } = useAdvertise
 const { news, newsLoading, newsError } = useNewsHooks();
 
 
-console.log("news", news?.news)
   return (
-    <div>
-      <Header />
       <div className="container mx-auto px-4 py-4">
         <Banner 
         trendingNews={trendingNews?.news}
@@ -51,7 +48,7 @@ console.log("news", news?.news)
          />
          {
           advertisementLoading ? 
-          <div className="w-full h-20 bg-gray-200 dark:bg-gray-600 animate-pulse" />
+          <div className="w-full h-20 bg-gray-200 dark:bg-gray-600 animate-pulse mt-5 rounded-lg" />
            : advertisementError ? <div>Error</div> : advertisement?.data?.filter((ad: Advertisement) => ad?.banner === true)?.map((ad: Advertisement) => (
             <BannerAdvertisement
               key={ad.id}
@@ -61,16 +58,8 @@ console.log("news", news?.news)
             />
           ))
          }
-       {/* {
-        advertisement?.data?.filter((ad: any) => ad?.banner === true)?.map((ad: any) => (
-          <BannerAdvertisement
-            image={ad?.image}
-            altText={ad?.title}
-            targetUrl={ad?.link}
-          />
-        ))
-       } */}
-       <NewsList news={news?.news?.filter((news: NewsItem) => news?.trending === false || news?.breaking === false)} newsLoading={newsLoading} newsError={newsError} />
+
+       <NewsList news={news?.news?.filter((news: NewsItem) => news?.trending === false && news?.breaking === false).slice(0, 8)} newsLoading={newsLoading} newsError={newsError} />
         {/* <Stories /> */}
         {/* Events and Social Media */}
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
@@ -88,9 +77,5 @@ console.log("news", news?.news)
         </div> */}
 
       </div>
-
-      <Footer />
-
-    </div>
   );
 }

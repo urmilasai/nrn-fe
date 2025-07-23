@@ -9,6 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
     <main className={`${figtree.variable} font-sans`}>
       <Component {...pageProps} />
+      
     </main>
     </QueryClientProvider>
   );

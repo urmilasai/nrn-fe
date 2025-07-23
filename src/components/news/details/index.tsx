@@ -20,7 +20,6 @@ interface DetailsProps {
 const Details = ({ newsById }: DetailsProps) => {
   return (
     <div className="bg-white min-h-screen text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-    <Header />
     <main className="container mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-12">
       {/* Main Content */}
       <article className="md:col-span-12">
@@ -69,7 +68,6 @@ const Details = ({ newsById }: DetailsProps) => {
         </ul>
       </aside> */}
     </main>
-    <Footer />
   </div>
   )
 }

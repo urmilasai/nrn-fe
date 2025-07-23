@@ -1,9 +1,9 @@
 import Details from '@/components/news/details'
-import { useNewsHooks } from '@/hooks/news/news.hooks'
+import { useNewsByIdHooks } from '@/hooks/news/newsby.hooks'
 import React from 'react'
 
 const NewsDetailsPage = () => {
-    const { newsById, newsByIdLoading } = useNewsHooks()
+    const { newsById, newsByIdLoading } = useNewsByIdHooks()
   return (
     <>
     {

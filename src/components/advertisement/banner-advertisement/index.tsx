@@ -27,7 +27,7 @@ const BannerAdvertisement: React.FC<BannerAdvertisementProps> = ({
       >
         <div className="relative w-full aspect-[6/1] sm:aspect-[8/1] md:aspect-[10/1]">
           <Image
-            src={image || '/fallback-image.jpg'}
+            src={image || '/fallback-image.png'}
             alt={altText}
             fill
             priority

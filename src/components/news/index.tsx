@@ -1,7 +1,7 @@
 import React from 'react'
 import CardSkeleton from '../ui/skeleton-loading/card-skeleton'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import NrnImage from '../ui/image/nrn-image';
 
 interface NewsItem {
   _id: string;
@@ -40,7 +40,7 @@ export default function NewsList ({ news, newsLoading, newsError }: NewsListProp
         : news?.map((story: NewsItem, index: number) => (
             <div key={index} className="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105" onClick={() => router.push(`/news/${story?._id}`)}>
                 <div className="relative w-full h-40">
-                  <Image src={story?.image || "/fallback-image.jpg"} alt={story.title} fill className="object-cover" />
+                  <NrnImage image={story?.image || "/fallback-image.jpg"} alt={story.title} className="object-cover" />
                 </div>
                 <div className="p-4">
                     <p className="text-xs text-red-600">{story.category}</p>

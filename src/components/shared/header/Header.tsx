@@ -1,4 +1,3 @@
-'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -10,8 +9,9 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Stories', href: '/stories' },
-    { name: 'Events', href: '/events' },
+    { name: 'About', href: '/about' },
+    // { name: 'Stories', href: '/stories' },
+    // { name: 'Events', href: '/events' },
     { name: 'Contact', href: '/contact' },
   ]
 

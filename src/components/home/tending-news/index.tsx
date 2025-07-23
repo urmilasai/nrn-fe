@@ -1,7 +1,8 @@
 'use client';
 
+import NrnImage from "@/components/ui/image/nrn-image";
 import TrendingLoading from "@/components/ui/skeleton-loading/trending-loading";
-// import Image from "next/image";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 interface TrendingNewsItem {
@@ -40,25 +41,25 @@ export default function TrendingNews({ trendingNews, trendingNewsLoading }: Tren
         ) : (
           trendingNews?.slice(0, 4).map((news, index) => (
             <div
-              key={news._id}
+              key={index}
               className="flex space-x-4 group cursor-pointer sm-flex"
               onClick={() => router.push(`/news/trending/${news?._id}`)}
             >
-                     {news?.image}
               <div className="relative w-24 h-20 flex-shrink-0">
+                <NrnImage image={news?.image || "/fallback-image.jpg"} alt={news?.title} className="rounded-lg object-cover w-full h-full" />
                 {/* {news?.image && <Image
-                  src={news?.image || "/images/banner.jpg"}
+                  src={news?.image || "/fallback-image.jpg"}
                   alt={news?.title}
+                  fill
                   className="rounded-lg object-cover w-full h-full"
-                />} */}
+                />}
                 <div className="absolute top-2 left-2 w-6 h-6 rounded-full bg-red-600 flex items-center justify-center text-white text-sm font-bold">
                   {index + 1}
-                </div>
+                </div> */}
               </div>
               <div className="flex-1 flex flex-col">
                 <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-red-600 transition-colors duration-200">
                   {news?.title}
-                  {news?.image}
                 </h3>
                 <div className="flex items-center space-x-2 mt-auto">
                   <p className="text-[10px] text-white dark:text-gray-400 bg-[#1a3869] rounded-full px-2 py-1">

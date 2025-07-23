@@ -4,7 +4,6 @@ import { config } from "../../../config";
 
 
 const apiURL = config.gateway.apiURL;
-console.log("apiURL", apiURL);
 const axiosFeInstance = axios.create({
   baseURL: apiURL,
   headers: {
