@@ -2,7 +2,6 @@
 
 import NrnImage from "@/components/ui/image/nrn-image";
 import TrendingLoading from "@/components/ui/skeleton-loading/trending-loading";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 interface TrendingNewsItem {

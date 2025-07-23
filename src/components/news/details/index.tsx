@@ -1,5 +1,3 @@
-import Footer from '@/components/shared/footer/footer'
-import Header from '@/components/shared/header/Header'
 import React from 'react'
 import Image from 'next/image'
 

@@ -1,8 +1,6 @@
 import BannerAdvertisement from "@/components/advertisement/banner-advertisement";
 import Banner from "@/components/home/banner/banner";
 import NewsList from "@/components/news";
-import Footer from "@/components/shared/footer/footer";
-import Header from "@/components/shared/header/Header";
 import { useAdvertisementHooks } from "@/hooks/advertisement/advertisement.hooks";
 import { useBreakingNews } from "@/hooks/news/breaking-news/breaking.hooks";
 import { useNewsHooks } from "@/hooks/news/news.hooks";

@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { getNews, getNewsById } from '@/fe/services/news.service'
-import { useRouter } from 'next/router'
+import { getNews } from '@/fe/services/news.service'
 
 export function useNewsHooks () {
   
