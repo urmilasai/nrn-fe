@@ -47,7 +47,7 @@ const { news, newsLoading, newsError } = useNewsHooks();
          {
           advertisementLoading ? 
           <div className="w-full h-20 bg-gray-200 dark:bg-gray-600 animate-pulse mt-5 rounded-lg" />
-           : advertisementError ? <div>Error</div> : advertisement?.data?.filter((ad: Advertisement) => ad?.banner === true)?.map((ad: Advertisement) => (
+           : advertisementError ? <div>Error</div> : advertisement?.data?.filter((ad: Advertisement) => ad?.banner === true)?.slice(0, 1).map((ad: Advertisement) => (
             <BannerAdvertisement
               key={ad.id}
               image={ad?.image}

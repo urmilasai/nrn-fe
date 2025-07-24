@@ -18,14 +18,14 @@ const CardAdvertisement: React.FC<CardAdvertisementProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`w-full overflow-hidden rounded-lg shadow-sm transition-transform hover:shadow-md hover:scale-[1.002] ${className} mt-4`}>
+    <div className={`w-full overflow-hidden rounded-lg shadow-sm transition-transform hover:shadow-md hover:scale-[1.002] ${className} sticky top-18.5`}>
       <Link 
         href={targetUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full"
       >
-        <div className="relative w-full aspect-[6/5] sm:aspect-[8/5s] md:aspect-[10/5]">
+        <div className="relative w-full aspect-[10/7] sm:aspect-[10/8] md:aspect-[10/8]">
           <Image
             src={imageUrl || '/fallback-image.png'}
             alt={altText}

@@ -16,11 +16,13 @@ const Header = () => {
   ]
 
   const handleMenuOpen = () => {
-    setIsMenuOpen(prevState => !prevState)
+    setIsMenuOpen(!isMenuOpen)
   }
 
+
   return (
-    <header className="bg-[#1a3869] text-white">
+    <header className="bg-[#1a3869] text-white sticky top-0 z-50">
+     
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -67,9 +69,9 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-2">
             <div className="flex flex-col space-y-4 pt-2 pb-3">
-              {navigation.map((item) => (
+              {navigation.map((item, index) => (
                 <Link
-                  key={item.name}
+                  key={index}
                   href={item.href}
                   className="text-white hover:text-gray-300 transition-colors"
                   onClick={() => setIsMenuOpen(false)}
@@ -77,7 +79,13 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              
+              <button
+                type="button"
+                className="text-left text-white hover:text-gray-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                More
+              </button>
             </div>
           </div>
         )}
@@ -86,4 +94,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header 

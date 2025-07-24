@@ -57,7 +57,7 @@ export default function TrendingNews({ trendingNews, trendingNewsLoading }: Tren
                 </div> */}
               </div>
               <div className="flex-1 flex flex-col">
-                <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-red-600 transition-colors duration-200">
+                <h3 className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary transition-colors duration-200 line-clamp-2">
                   {news?.title}
                 </h3>
                 <div className="flex items-center space-x-2 mt-auto">

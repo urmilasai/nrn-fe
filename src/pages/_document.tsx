@@ -1,5 +1,3 @@
-import Footer from "@/components/shared/footer/footer";
-import Header from "@/components/shared/header/Header";
 import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {

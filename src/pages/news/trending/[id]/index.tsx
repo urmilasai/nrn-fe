@@ -1,13 +1,20 @@
 import Details from '@/components/news/details'
+import DetailsLoading from '@/components/ui/skeleton-loading/details-loading'
+import { useAdvertisementHooks } from '@/hooks/advertisement/advertisement.hooks'
 import { useNewsByIdHooks } from '@/hooks/news/newsby.hooks'
 import React from 'react'
 
 const TrendingDetailsPage = () => {
     const { newsById, newsByIdLoading } = useNewsByIdHooks()
+    const { advertisement } = useAdvertisementHooks();
   return (
     <>
     {
-      newsByIdLoading ? <div>Loading...</div> : <Details newsById={newsById?.news} />
+      newsByIdLoading ? 
+      <div className="container mx-auto px-4 py-4">
+        <DetailsLoading />
+      </div> : 
+      <Details newsById={newsById?.news} advertisement={advertisement?.data} />
     }
     </>
    

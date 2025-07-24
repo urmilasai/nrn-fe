@@ -8,7 +8,8 @@ export function useNewsByIdHooks () {
 
   const { data: newsById, isLoading: newsByIdLoading, error: newsByIdError } = useQuery({
     queryKey: ['newsById', id],
-    queryFn: () => getNewsById(id as string)
+    queryFn: () => getNewsById(id as string),
+    enabled: !!id
   })
 
   return {  newsById, newsByIdLoading, newsByIdError }

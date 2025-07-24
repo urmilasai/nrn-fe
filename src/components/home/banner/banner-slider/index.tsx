@@ -36,7 +36,7 @@ const Slider = ({ bannerData, breakingNewsLoading, breakingNewsError }: BannerSl
           navigation
           pagination={{ clickable: true }}
           loop={true}
-          className="w-full aspect-[16/7.3] sm:aspect-[16/7] lg:aspect-[16/7.3] rounded-lg overflow-hidden"
+          className="w-full aspect-[16/9] sm:aspect-[16/8] lg:aspect-[16/7.3] rounded-lg overflow-hidden"
         >
           {bannerData?.map((slide: BannerSliderItem, index: number) => (
             <SwiperSlide key={index}>
