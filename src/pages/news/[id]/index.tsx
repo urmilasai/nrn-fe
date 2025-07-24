@@ -3,7 +3,8 @@ import { useNewsByIdHooks } from '@/hooks/news/newsby.hooks'
 import React from 'react'
 
 const NewsDetailsPage = () => {
-    const { newsById, newsByIdLoading } = useNewsByIdHooks()
+    const { newsById, newsByIdLoading } = useNewsByIdHooks();
+    console.log(newsById);
   return (
     <>
     {

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
 
   const navigation = [
     { name: 'Home', href: '/' },
@@ -15,8 +15,12 @@ const Header = () => {
     { name: 'Contact', href: '/contact' },
   ]
 
+  const handleMenuOpen = () => {
+    setIsMenuOpen(prevState => !prevState)
+  }
+
   return (
-    <header className="bg-[#1a3869] text-white sticky top-0 z-50">
+    <header className="bg-[#1a3869] text-white">
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -47,14 +51,13 @@ const Header = () => {
           {/* Mobile Navigation Button */}
           <div className="flex items-center space-x-4 md:hidden">
             <button
-              type="button"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={handleMenuOpen}
               className="text-white hover:text-gray-300"
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 " />
               )}
             </button>
           </div>
@@ -74,13 +77,7 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <button
-                type="button"
-                className="text-left text-white hover:text-gray-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                More
-              </button>
+              
             </div>
           </div>
         )}
@@ -89,4 +86,4 @@ const Header = () => {
   )
 }
 
-export default Header 
+export default Header
