@@ -1,6 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import CardAdvertisement from '@/components/advertisement/card-advertisement';
+import { EmailIcon, EmailShareButton, FacebookIcon, FacebookMessengerIcon, FacebookMessengerShareButton, FacebookShareButton, LineIcon, LineShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
+import { CopyIcon } from 'lucide-react';
 
 interface NewsItem {
   id: string;
@@ -29,17 +31,47 @@ interface DetailsProps {
 const Details = ({ newsById,  advertisement }: DetailsProps) => {
   return (
     <div className="bg-white min-h-screen text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
-      <main className="container mx-auto px-4 py-8 grid md:grid-cols-12 gap-12">
+      <main className="container mx-auto px-4 py-8 grid md:grid-cols-12 gap-8">
         {/* Main Content */}
-        <article className={`${advertisement && advertisement?.filter((ad: AdvertisementItem) => ad.banner === false).length > 0 ? 'col-span-8' : 'col-span-12'}`}>
-          <div className="flex items-center space-x-4 text-xs uppercase tracking-widest text-neutral-500 mb-2">
-            <span>{newsById?.newsFrom || 'Santosh Basnet'}</span>
-            <span className="mx-1">·</span>
-            <span>
+        <div className={`${advertisement && advertisement?.filter((ad: AdvertisementItem) => ad.banner === false).length > 0 ? 'col-span-4 sm:col-span-8' : 'col-span-12'}`}>
+          <div className="flex-col items-start space-x-4 text-xs uppercase tracking-widest text-neutral-500 mb-2 flex-wrap md:flex md:flex-row md:items-center">
+            <div>{newsById?.newsFrom || 'Santosh Basnet'}</div>
+            <div className="mx-1">·</div>
+            <div>
               {newsById?.updatedAt ? new Date(newsById?.updatedAt).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }).replace(',', '').replace(/(\d+)(?=\s)/, '$1th') : newsById?.createdAt ? new Date(newsById?.createdAt).toLocaleString('en-US', { day: 'numeric', month: 'long', year: 'numeric' }).replace(',', '').replace(/(\d+)(?=\s)/, '$1th') : ''}
-            </span>
+            </div>
+            <div className="ms-auto mt-2 sm:mt-0">
+            <div className="share flex items-center space-x-2">
+              <div className='cursor-pointer bg-neutral-200 p-2 rounded-full hover:bg-neutral-300 transition-all duration-300 ease-in-out' onClick={() => {
+                navigator.clipboard.writeText(typeof window !== 'undefined' ? window.location.href : '');
+              }}>
+                <CopyIcon size={14} />
+              </div>
+            <FacebookShareButton url={typeof window !== 'undefined' ? window.location.href : ''}>
+              <FacebookIcon size={24} round />
+            </FacebookShareButton>
+            <FacebookMessengerShareButton 
+              url={typeof window !== 'undefined' ? window.location.href : ''}
+              appId="YOUR_FACEBOOK_APP_ID"
+            >
+              <FacebookMessengerIcon size={24} round />
+            </FacebookMessengerShareButton>
+            
+            <EmailShareButton url={typeof window !== 'undefined' ? window.location.href : ''}>
+              <EmailIcon size={24} round />
+            </EmailShareButton>
+            <LineShareButton url={typeof window !== 'undefined' ? window.location.href : ''}>
+              <LineIcon size={24} round />
+            </LineShareButton>
+            <TwitterShareButton url={typeof window !== 'undefined' ? window.location.href : ''}>
+              <TwitterIcon size={24} round />
+            </TwitterShareButton>
+          </div>
+            </div>
+
           </div>
           <h1 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-4">{newsById?.title}</h1>
+          
           <div className="border border-x-0 border-neutral-200 dark:border-neutral-800 py-8 mb-6">
             <div className="relative w-full h-96">
               <Image src={newsById?.image || "/images/banner.jpg"} alt={newsById?.title} fill className="object-cover rounded-lg" />
@@ -49,8 +81,8 @@ const Details = ({ newsById,  advertisement }: DetailsProps) => {
           <span className="text-6xl font-serif font-bold float-left mr-2 leading-none">L</span>
           orem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus repudiandae, inventore pariatur numquam cumque possimus exercitationem? Nihil tempore odit ab minus eveniet praesentium, similique blanditiis molestiae ut saepe perspiciatis officia nemo, eos quae cumque. Accusamus fugiat architecto rerum animi atque eveniet, quo, praesentium dignissimos
         </p> */}
-          <p className="text-base md:text-lg mb-6" dangerouslySetInnerHTML={{ __html: newsById?.description }} />
-        </article>
+          <p className="text-base md:text-lg " dangerouslySetInnerHTML={{ __html: newsById?.description }} />
+        </div>
         {
           advertisement && advertisement?.filter((ad: AdvertisementItem) => ad.banner === false).length > 0 && (
             <div className="col-span-4 relative">

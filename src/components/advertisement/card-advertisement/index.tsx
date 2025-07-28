@@ -25,7 +25,7 @@ const CardAdvertisement: React.FC<CardAdvertisementProps> = ({
         rel="noopener noreferrer"
         className="block w-full"
       >
-        <div className="relative w-full aspect-[10/7] sm:aspect-[10/8] md:aspect-[10/8]">
+        <div className="relative w-full aspect-[12/10] sm:aspect-[12/10] md:aspect-[12/10]">
           <Image
             src={imageUrl || '/fallback-image.png'}
             alt={altText}
