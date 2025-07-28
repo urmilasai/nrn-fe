@@ -1,5 +1,3 @@
-'use client';
-
 import NrnImage from "@/components/ui/image/nrn-image";
 import TrendingLoading from "@/components/ui/skeleton-loading/trending-loading";
 import { useRouter } from "next/router";
