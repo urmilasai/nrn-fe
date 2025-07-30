@@ -24,7 +24,7 @@ export default function NewsList ({ news, newsLoading, newsError }: NewsListProp
     return <div>Error</div>
   }
   return (
-    <div className="w-full bg-white dark:bg-gray-800 px-4 py-6 rounded-lg">
+    <div className="w-full bg-white dark:bg-gray-800  py-6 rounded-lg">
       <div className="relative mb-6">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100">
           News

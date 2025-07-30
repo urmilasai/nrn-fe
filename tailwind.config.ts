@@ -25,6 +25,13 @@ const config: Config = {
           800: '#1a3869',
           900: '#102a43',
         },
+        secondary: {
+          DEFAULT: '#b02f25',
+          50: '#f0f4f8',
+          100: '#d9e2ec',
+          200: '#bcccdc',
+          300: '#9fb3c8',
+        },
       },
     },
   },

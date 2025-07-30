@@ -18,14 +18,14 @@ const BannerAdvertisement: React.FC<BannerAdvertisementProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`w-full overflow-hidden rounded-lg shadow-sm transition-transform hover:shadow-md hover:scale-[1.002] ${className} my-10`}>
+    <div className={`w-full overflow-hidden rounded-lg shadow-sm transition-transform hover:shadow-md hover:scale-[1.002] ${className} mt-10 mb-6`}>
       <Link 
         href={targetUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="block w-full"
       >
-        <div className="relative w-full aspect-[6/1] sm:aspect-[8/1] md:aspect-[10/1]">
+        <div className="relative w-full aspect-[6/2] sm:aspect-[8/2] md:aspect-[10/2]">
           <Image
             src={image || '/fallback-image.png'}
             alt={altText}

@@ -1,0 +1,7 @@
+{
+    "rewrites": [
+      { "source": "/news/:id", "destination": "/news/[id]" },
+      { "source": "/news/trending/:id", "destination": "/news/trending/[id]" }
+    ]
+  }
+  
