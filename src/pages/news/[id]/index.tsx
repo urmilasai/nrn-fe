@@ -5,27 +5,37 @@ import { useNewsByIdHooks } from '@/hooks/news/newsby.hooks'
 import Head from 'next/head';
 import React from 'react'
 
-const NewsDetailsPage = () => {
+interface NewsData {
+  news?: {
+    _id: string;
+    title: string;
+    description: string;
+    image: string;
+  };
+}
+
+const NewsDetailsPage = ({ details }: { details: NewsData | null }) => {
+  console.log("details", details);
     const { newsById, newsByIdLoading } = useNewsByIdHooks();
     const { advertisement } = useAdvertisementHooks();
   return (
     <>
      <Head>
-        <title>{newsById?.news?.title}</title>
-        <meta name="description" content={newsById?.news?.description} />
+        <title>{details?.news?.title}</title>
+        <meta name="description" content={details?.news?.description} />
 
         {/* Open Graph Meta Tags */}
-        <meta property="og:title" content={newsById?.news?.title} />
-        <meta property="og:description" content={newsById?.news?.description} />
-        <meta property="og:image" content={newsById?.news?.image} />
-        <meta property="og:url" content={`https://nrn.news/news/${newsById?.news?._id}`} />
+        <meta property="og:title" content={details?.news?.title} />
+        <meta property="og:description" content={details?.news?.description} />
+        <meta property="og:image" content={details?.news?.image} />
+        <meta property="og:url" content={`https://nrn.news/news/${details?.news?._id}`} />
         <meta property="og:type" content="article" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={newsById?.news?.title} />
-        <meta name="twitter:description" content={newsById?.news?.description} />
-        <meta name="twitter:image" content={newsById?.news?.image} />
+        <meta name="twitter:title" content={details?.news?.title} />
+        <meta name="twitter:description" content={details?.news?.description} />
+        <meta name="twitter:image" content={details?.news?.image} />
       </Head>
     {
       newsByIdLoading ? 
@@ -39,3 +49,16 @@ const NewsDetailsPage = () => {
 }
 
 export default NewsDetailsPage
+
+export async function getServerSideProps({ params }: { params: { id: string } }) {
+  const { id } = params
+
+  try {
+    const res = await fetch(`https://api.nrn.news/api/news/${id}`)
+    const newsData: NewsData = await res.json()
+    return { props: { details: newsData } }
+  } catch (error) {
+    console.error('Error fetching news:', error)
+    return { props: { details: null } }
+  }
+}

@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <title>NRN News</title>
         <meta property="og:title" content="NRN News - Latest Updates" />
         <meta property="og:description" content="Get the latest news and updates from NRN News." />
         <meta property="og:image" content="https://nrn.news/about.png" /> 
