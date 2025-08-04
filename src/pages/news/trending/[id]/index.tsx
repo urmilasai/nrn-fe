@@ -17,7 +17,7 @@ const TrendingDetailsPage = () => {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content={newsById?.news?.title} />
         <meta property="og:description" content={newsById?.news?.description} />
-        <meta property="og:image" content={newsById?.news?.imageUrl} />
+        <meta property="og:image" content={newsById?.news?.image} />
         <meta property="og:url" content={`https://nrn.news/news/trending/${newsById?.news?._id}`} />
         <meta property="og:type" content="article" />
 
@@ -25,7 +25,7 @@ const TrendingDetailsPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={newsById?.news?.title} />
         <meta name="twitter:description" content={newsById?.news?.description} />
-        <meta name="twitter:image" content={newsById?.news?.imageUrl} />
+        <meta name="twitter:image" content={newsById?.news?.image} />
       </Head>
     {
       newsByIdLoading ? 
