@@ -3,7 +3,9 @@ import DetailsLoading from '@/components/ui/skeleton-loading/details-loading'
 import { useAdvertisementHooks } from '@/hooks/advertisement/advertisement.hooks'
 import { useNewsByIdHooks } from '@/hooks/news/newsby.hooks'
 import Head from 'next/head'
+import path from 'path'
 import React from 'react'
+import fs from "fs";
 
 interface NewsData {
   news?: {
@@ -56,6 +58,16 @@ export async function getServerSideProps({ params }: { params: { id: string } })
   try {
     const res = await fetch(`https://api.nrn.news/api/news/${id}`)
     const newsData: NewsData = await res.json()
+    if (newsData?.news?.image.startsWith("data:image")) {
+      const base64Data = newsData.news.image.split(",")[1];
+      const filePath = path.join(process.cwd(), "public", `${params.id}.jpg`);
+      fs.writeFileSync(filePath, Buffer.from(base64Data, "base64"));
+      newsData.news.image = `https://nrn.news/${params.id}.jpg`;
+    } else {
+      if (newsData?.news?.image) {
+     newsData.news.image =   newsData?.news?.image
+      }
+    }
     return { props: { details: newsData } }
   } catch (error) {
     console.error('Error fetching news:', error)
