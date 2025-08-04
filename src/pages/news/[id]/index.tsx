@@ -15,7 +15,6 @@ interface NewsData {
 }
 
 const NewsDetailsPage = ({ details }: { details: NewsData | null }) => {
-  console.log("details", details);
     const { newsById, newsByIdLoading } = useNewsByIdHooks();
     const { advertisement } = useAdvertisementHooks();
   return (
