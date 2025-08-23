@@ -1,12 +1,13 @@
 import NewsList from '@/components/news';
 import { useNewsHooks } from '@/hooks/news/news.hooks';
 import Head from 'next/head';
-import React, { useState } from 'react'
+import React from 'react'
 
 const NewsPage = () => {
-  const { news, newsLoading, newsError, currentPage, setCurrentPage, setSearchKeyword } = useNewsHooks();
+  const { news, newsLoading, newsError, currentPage, setCurrentPage } = useNewsHooks();
 
  
+  
 
   return (  
     <>

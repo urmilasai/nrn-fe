@@ -15,16 +15,7 @@ interface Advertisement {
   banner: boolean;
 }
 
-interface NewsItem {
-  _id: string;
-  title: string;
-  image: string;
-  category: string;
-  trending?: boolean;
-  breaking?: boolean;
-  readTime?: string;
-  date?: string;
-}
+
 
 export default function Home() {
 

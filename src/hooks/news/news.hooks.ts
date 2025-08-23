@@ -12,7 +12,6 @@ export function useNewsHooks () {
     data: news,
     isLoading: newsLoading,
     error: newsError,
-    refetch,
   } = useQuery({
     queryKey: ["listNews", pageSize, currentPage, searchKeyword],
     queryFn: async () => {
@@ -33,5 +32,5 @@ export function useNewsHooks () {
   });
 
 
-  return { news, newsLoading, newsError, pageSize, currentPage, setCurrentPage, setSearchKeyword }
+  return { news, newsLoading, newsError, pageSize, currentPage, setCurrentPage, setSearchKeyword, setPageSize }
 }

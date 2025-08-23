@@ -69,6 +69,6 @@ export async function getServerSideProps({ params }: { params: { id: string } })
     }
     return { props: { details: newsData } }
   } catch (error) {
-    return { props: { details: null } }
+    return { props: { details: null, error } }
   }
 }
