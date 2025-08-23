@@ -18,7 +18,7 @@ const CardAdvertisement: React.FC<CardAdvertisementProps> = ({
   className = '',
 }) => {
   return (
-    <div className={`w-full overflow-hidden rounded-lg shadow-sm transition-transform hover:shadow-md hover:scale-[1.002] ${className} sticky top-18.5`}>
+    <div className={`w-full overflow-hidden rounded-lg shadow-sm transition-transform hover:shadow-md hover:scale-[1.002] ${className} mb-2`}>
       <Link 
         href={targetUrl}
         target="_blank"

@@ -86,6 +86,8 @@ const Details = ({ newsById,  advertisement }: DetailsProps) => {
         {
           advertisement && advertisement?.filter((ad: AdvertisementItem) => ad.banner === false).length > 0 && (
             <div className="col-span-4 relative">
+              <div className="sm:sticky sm:top-18.5">
+
             {
               advertisement?.filter((ad: AdvertisementItem) => ad?.banner === false)?.map((ad: AdvertisementItem) => (
                 <CardAdvertisement
@@ -96,6 +98,7 @@ const Details = ({ newsById,  advertisement }: DetailsProps) => {
                 />
               ))
             }
+              </div>
           </div>
           )
         }
