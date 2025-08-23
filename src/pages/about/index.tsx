@@ -1,8 +1,22 @@
 import React from 'react'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const About = () => {
     return (
+        <>
+        <Head>
+            <title>NRN News -About Us</title>
+            <meta property="og:title" content="NRN News - Latest Updates" />
+        <meta property="og:description" content="Get the latest news and updates from NRN News." />
+        <meta property="og:image" content="https://nrn.news/about.png" />
+        <meta property="og:url" content="https://nrn.news" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="NRN News - Latest Updates" />
+        <meta name="twitter:description" content="Get the latest news and updates from NRN News." />
+        <meta name="twitter:image" content="https://nrn.news/about.png" />
+        </Head>
         <div className="bg-gray-100 dark:bg-gray-900 py-12 flex flex-col items-center justify-center">
             <div className="container mx-auto px-4">
                 <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-gray-100 mb-8">About Us</h1>
@@ -47,6 +61,7 @@ const About = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

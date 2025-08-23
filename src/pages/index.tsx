@@ -65,7 +65,7 @@ export default function Home() {
             ))
         }
 
-        <NewsList news={news?.news?.filter((news: NewsItem) => news?.trending === false && news?.breaking === false).slice(0, 8)} newsLoading={newsLoading} newsError={newsError} />
+        <NewsList news={news?.items?.slice(0, 8)} newsLoading={newsLoading} newsError={newsError} />
         {/* <Stories /> */}
         {/* Events and Social Media */}
         {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">

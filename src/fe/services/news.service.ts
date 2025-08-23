@@ -2,9 +2,15 @@ import axiosFeInstance from "../axios/axiosintance";
 
 
 
-export const getNews = async () => {
+export const getNews = async (params: { page: number, limit: number, keyword: string }) => {
   try {
-    const response = await axiosFeInstance.get(`/news`);
+    const response = await axiosFeInstance.get(`/news`,{
+      params: {
+        page: params.page,
+        limit: params.limit,
+        keyword: params.keyword
+      }
+    });
     return response.data;
   } catch (error) {
     throw error;

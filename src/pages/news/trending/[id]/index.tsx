@@ -70,7 +70,6 @@ export async function getServerSideProps({ params }: { params: { id: string } })
     }
     return { props: { details: newsData } }
   } catch (error) {
-    console.error('Error fetching news:', error)
     return { props: { details: null } }
   }
 }
