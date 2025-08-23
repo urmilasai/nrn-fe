@@ -5,14 +5,6 @@ import { useNewsByIdHooks } from '@/hooks/news/newsby.hooks'
 import Head from 'next/head';
 import React from 'react'
 
-interface NewsData {
-  news?: {
-    _id: string;
-    title: string;
-    description: string;
-    image: string;
-  };
-}
 
 const NewsDetailsPage = () => {
     const { newsById, newsByIdLoading } = useNewsByIdHooks();
