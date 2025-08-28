@@ -51,12 +51,12 @@ export const getServerSideProps: GetServerSideProps<BlogPostProps> = async (cont
    const res = await fetch(`https://api.nrn.news/api/news/${id}`);
    const postData = await res.json();
  
-   if (!postData.id) {
+   if (!postData.news?._id) {
      return { notFound: true };
    }
 
    const post ={
-    id: postData?.news?.id,
+    id: postData?.news?._id,
     title: postData?.news?.title,
     description: postData?.news?.description,
     image: postData?.news?.image
