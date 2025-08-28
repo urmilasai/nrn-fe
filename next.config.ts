@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    domains: ['nrn.news', 'api.nrn.news'],
+    domains: ['nrn.news', 'api.nrn.news', 'picsum.photos'],
   },
 };
 

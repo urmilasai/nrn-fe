@@ -29,7 +29,6 @@ interface DetailsProps {
 }
 
 const Details = ({ newsById,  advertisement }: DetailsProps) => {
-  console.log("sdasd", newsById)
   return (
     <div className="bg-white min-h-screen text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100">
       <main className="container mx-auto px-4 py-8 grid md:grid-cols-12 gap-8">

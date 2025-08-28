@@ -12,7 +12,6 @@ export function useNewsByIdHooks () {
     enabled: !!id
   })
 
-  console.log("asdasd", newsById)
 
   return {  newsById, newsByIdLoading, newsByIdError }
 }
