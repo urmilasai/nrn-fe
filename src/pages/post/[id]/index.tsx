@@ -34,11 +34,7 @@ export default function BlogPost ({ post }: BlogPostProps) {
       <main className='p-5'>
         <h1 className='text-2xl font-bold mb-2'>{post.title}</h1>
         <p className='mb-4'>{post.description}</p>
-        <img
-          src={post.image}
-          alt={post.title}
-          className='max-w-full rounded-lg'
-        />
+        
       </main>
     </>
   )
