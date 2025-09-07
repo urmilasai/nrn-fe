@@ -81,7 +81,7 @@ const Details = ({ newsById,  advertisement }: DetailsProps) => {
           <span className="text-6xl font-serif font-bold float-left mr-2 leading-none">L</span>
           orem ipsum dolor sit, amet consectetur adipisicing elit. Vero temporibus repudiandae, inventore pariatur numquam cumque possimus exercitationem? Nihil tempore odit ab minus eveniet praesentium, similique blanditiis molestiae ut saepe perspiciatis officia nemo, eos quae cumque. Accusamus fugiat architecto rerum animi atque eveniet, quo, praesentium dignissimos
         </p> */}
-        <div className="table-column">
+        <div className="">
         <p className="text-base md:text-lg" dangerouslySetInnerHTML={{ __html: newsById?.description }} />
 
         </div>
