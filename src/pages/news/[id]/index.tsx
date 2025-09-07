@@ -36,7 +36,7 @@ export default function NewsDetailsPage ({ post }: BlogPostProps) {
         <meta property='og:url' content={`https://nrn.news/news/${post.id}`} />
         <meta property='og:title' content={post.title} />
         <meta property='og:description' content={stripHtmlTags(post.description)} />
-        <meta property='og:image' content={post.imageUrl} />
+        <meta property='og:image' content={post?.imageUrl} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:url' content={`https://nrn.news/news/news/${post.id}`} />
         <meta name='twitter:title' content={post.title} />

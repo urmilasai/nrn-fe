@@ -21,6 +21,10 @@ type BlogPostProps = {
 export default function TrendingNewsDetailsPage ({ post }: BlogPostProps) {
     const { newsById, newsByIdLoading } = useNewsByIdHooks()
     const { advertisement } = useAdvertisementHooks();
+  const stripHtmlTags = (html: string) => {
+    if (!html) return '';
+    return html.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ').trim();
+  };
   return (
     <>
    <Head>
@@ -29,7 +33,7 @@ export default function TrendingNewsDetailsPage ({ post }: BlogPostProps) {
         <meta property='og:type' content='article' />
         <meta property='og:url' content={`https://nrn.news/news/trending/${post.id}`} />
         <meta property='og:title' content={post.title} />
-        <meta property='og:description' content={post.description} />
+        <meta property='og:description' content={stripHtmlTags(post.description)} />
         <meta property='og:image' content={post.imageUrl} />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:url' content={`https://nrn.news/news/trending/${post.id}`} />
