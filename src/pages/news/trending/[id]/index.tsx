@@ -29,7 +29,7 @@ export default function TrendingNewsDetailsPage ({ post }: BlogPostProps) {
     <>
    <Head>
         <title>{post.title}</title>
-        <meta name='description' content={post.description} />
+        <meta name='description' content={stripHtmlTags(post.description)} />
         <meta property='og:type' content='article' />
         <meta property='og:url' content={`https://nrn.news/news/trending/${post.id}`} />
         <meta property='og:title' content={post.title} />
