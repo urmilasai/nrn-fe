@@ -142,7 +142,7 @@ const PrivacyPolicyPage = () => {
                             <h3 className="font-semibold mt-4 mb-2">3. Right of Reply</h3>
                             <p>
                                 Individuals or organisations directly affected by a report may request a right of reply,
-                                which will be considered fairly
+                                which will be considered fairly.
                             </p>
                         </section>
 
